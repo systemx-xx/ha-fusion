@@ -34,6 +34,7 @@ export interface Views {
 	icon?: string;
 	sections?: Section[];
 	isDndShadowItem?: boolean;
+	background?: string;
 }
 
 export interface Section {

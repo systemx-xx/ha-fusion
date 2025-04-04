@@ -279,6 +279,7 @@
 <main
 	style:transition="opacity {$motion}ms ease, outline-color {$motion}ms ease"
 	style:opacity={$editMode && view?.sections.length === 0 ? '0' : '1'}
+	style:background={view?.background || 'none'}
 	use:dndzone={{ ...dndOptions, type: 'section', items: view.sections }}
 	on:consider={dragSection}
 	on:finalize={dragSection}
@@ -417,7 +418,7 @@
 <style>
 	main {
 		grid-area: main;
-		padding: 0 2rem 2rem;
+		padding: 2rem 2rem 2rem 2rem;
 		display: grid;
 		gap: 1.5rem;
 		outline: transparent;

@@ -13,6 +13,8 @@
 	export let sel: ViewItem;
 
 	let name = sel?.name;
+	let background = sel?.background;
+	
 
 	let icon: string | undefined = sel?.icon;
 
@@ -54,6 +56,28 @@
 				bind:value={name}
 				placeholder={nameConst}
 				on:change={(event) => set('name', event)}
+				style:padding
+				autocomplete="off"
+				spellcheck="false"
+			/>
+		</InputClear>
+
+		<h2>{$lang('background')}</h2>
+
+		<InputClear
+			condition={background}
+			on:clear={() => {
+				background = '';
+				set('background', '');
+			}}
+			let:padding
+		>
+			<input
+				class="input"
+				type="text"
+				bind:value={background}
+				placeholder="e.g. linear-gradient(...) or /local/backgrounds/room.jpg"
+				on:change={(event) => set('background', event)}
 				style:padding
 				autocomplete="off"
 				spellcheck="false"
